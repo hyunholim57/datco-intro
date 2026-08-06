@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 제조 플랫폼 닷코 소개 | DATCO</title>
+<meta name="description" content="흩어진 제조 데이터를 연결하는 AI 제조 공급망 플랫폼, 닷코. 누적 73개 제조 기업이 닷코를 통해 제조 정확도와 효율을 높이고 있습니다.">
+
+<!-- Open Graph (카카오톡/문자 링크 미리보기) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 제조 플랫폼 닷코 소개">
+<meta property="og:description" content="회사소개서 · 서비스 비교표 · DAT-V 영상 · 브랜드 필름을 한 페이지에서 확인하세요.">
+<meta property="og:url" content="https://hyunholim57.github.io/datco-intro/">
+<meta property="og:image" content="https://hyunholim57.github.io/datco-intro/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+<style>
+  :root {
+    --red: #E14134;
+    --red-dark: #C33529;
+    --red-tint: #FDEDEB;
+    --ink: #1F2328;
+    --gray-700: #454C53;
+    --gray-500: #71787F;
+    --gray-300: #D7DBDF;
+    --gray-100: #F4F5F6;
+    --bg: #EFF1F3;
+    --card: #FFFFFF;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+      "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", system-ui, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 20px 16px 48px;
+  }
+  @media (min-width: 640px) {
+    .wrap { padding: 32px 24px 72px; }
+  }
+
+  /* ===== 언어 전환 ===== */
+  .lang-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+  }
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--card);
+    border: 1px solid var(--gray-300);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: 0 1px 3px rgba(31,35,40,.06);
+  }
+  .lang-toggle button {
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gray-500);
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease;
+  }
+  .lang-toggle button.active {
+    background: var(--red);
+    color: #fff;
+  }
+
+  /* ===== 카드 공통 ===== */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 3px rgba(31,35,40,.06), 0 8px 24px rgba(31,35,40,.05);
+    overflow: hidden;
+  }
+
+  /* ===== 히어로 ===== */
+  .hero { padding: 32px 24px 8px; }
+  @media (min-width: 640px) { .hero { padding: 44px 44px 12px; } }
+  .brand { margin-bottom: 22px; }
+  .brand img { height: 28px; display: block; }
+  h1 {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: -.01em;
+  }
+  @media (min-width: 640px) { h1 { font-size: 30px; } }
+  .hero-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--red);
+    letter-spacing: -.005em;
+  }
+  @media (min-width: 640px) { .hero-sub { font-size: 15px; } }
+  .hero-rule {
+    height: 1px; background: var(--gray-300);
+    margin: 20px 0;
+  }
+  .greeting {
+    font-size: 15px;
+    color: var(--gray-700);
+    margin-bottom: 8px;
+  }
+  @media (min-width: 640px) { .greeting { font-size: 16px; } }
+  .greeting strong { color: var(--ink); }
+
+  /* ===== 핵심 소개: 라벨 + 설명 그리드 (열·행 일관 구조) ===== */
+  .feature-list { margin-top: 16px; }
+  .feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 16px 0;
+    border-top: 1px solid var(--gray-100);
+  }
+  @media (min-width: 560px) {
+    .feature {
+      grid-template-columns: 148px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+    }
+  }
+  .feature-label {
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    justify-self: start;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--red);
+    background: var(--red-tint);
+    border-radius: 999px;
+    padding: 4px 12px;
+    white-space: nowrap;
+  }
+  .feature-text {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.75;
+  }
+  @media (min-width: 640px) { .feature-text { font-size: 15.5px; } }
+  .feature-text strong { color: var(--ink); font-weight: 700; }
+  .feature-text .accent { color: var(--red); font-weight: 700; }
+  .hero-close {
+    padding: 16px 0 24px;
+    border-top: 1px solid var(--gray-100);
+    font-size: 15px;
+    color: var(--gray-700);
+  }
+
+  /* ===== 성과 하이라이트 ===== */
+  .stat-band {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--red-tint);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 4px 0 20px;
+  }
+  .stat-icon {
+    width: 42px; height: 42px; flex: none;
+    border-radius: 12px;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .stat-icon svg { width: 22px; height: 22px; }
+  .stat-text {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+  .stat-text strong { color: var(--ink); font-weight: 800; }
+  .stat-number {
+    flex: none;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--red);
+    letter-spacing: -.02em;
+  }
+  @media (min-width: 640px) { .stat-number { font-size: 38px; } }
+
+  /* ===== 주요 기능 아이콘 ===== */
+  .modules { padding: 24px 20px; }
+  @media (min-width: 640px) { .modules { padding: 30px 36px; } }
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 8px;
+  }
+  @media (min-width: 560px) {
+    .icon-grid { grid-template-columns: repeat(8, 1fr); }
+  }
+  .module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    text-align: center;
+  }
+  .module img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+  }
+  .module-name {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--gray-700);
+    white-space: nowrap;
+  }
+
+  /* ===== 섹션 라벨 ===== */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-500);
+    letter-spacing: .06em;
+    margin: 36px 4px 14px;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--gray-300);
+  }
+
+  /* ===== 문서 카드 ===== */
+  .doc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  @media (min-width: 560px) {
+    .doc-grid { grid-template-columns: 1fr 1fr; }
+  }
+  a.doc {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  a.doc:active { transform: scale(.985); }
+  @media (hover: hover) {
+    a.doc:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(31,35,40,.08), 0 12px 28px rgba(31,35,40,.10);
+    }
+  }
+  .doc-icon {
+    width: 44px; height: 44px; flex: none;
+    border-radius: 12px;
+    background: var(--red-tint);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .doc-icon svg { width: 22px; height: 22px; }
+  .doc-body { min-width: 0; flex: 1; }
+  .doc-title { font-size: 16px; font-weight: 700; line-height: 1.3; }
+  .doc-sub { font-size: 13px; color: var(--gray-500); margin-top: 2px; }
+  .doc-arrow { flex: none; color: var(--red); font-weight: 700; }
+
+  /* ===== 영상 카드 ===== */
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .video-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .video-card .frame {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+  .video-card iframe,
+  .video-card .thumb-btn {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  .thumb-btn { cursor: pointer; padding: 0; background: #000; display: block; }
+  .thumb-btn img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: .9;
+    display: block;
+  }
+  .play-badge {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: rgba(225,65,52,.95);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,.35);
+    transition: transform .15s ease;
+  }
+  .thumb-btn:hover .play-badge { transform: translate(-50%, -50%) scale(1.08); }
+  .play-badge svg { width: 22px; height: 22px; margin-left: 3px; }
+  .video-meta { padding: 14px 18px 16px; }
+  .video-title { font-size: 16px; font-weight: 700; }
+  .video-sub { font-size: 13px; color: var(--gray-500); margin-top: 2px; }
+
+  /* ===== 비즈니스 책임자 ===== */
+  .contact { margin-top: 36px; padding: 24px; }
+  @media (min-width: 640px) { .contact { padding: 30px 44px; } }
+  .contact-head { margin-bottom: 18px; }
+  .contact-name { font-size: 18px; font-weight: 800; }
+  .contact-role { font-size: 13.5px; color: var(--gray-500); margin-top: 2px; }
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 560px) {
+    .contact-actions { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .15s ease;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-ghost {
+    background: var(--gray-100);
+    color: var(--ink);
+    border: 1px solid var(--gray-300);
+  }
+  .btn-ghost:hover { background: #E9EBED; }
+  .btn-email { grid-column: 1 / -1; }
+  @media (min-width: 560px) { .btn-email { grid-column: auto; } }
+
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--gray-500);
+    line-height: 1.9;
+  }
+  footer .divider { margin: 0 6px; color: var(--gray-300); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== 언어 전환 ===== -->
+  <div class="lang-bar">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" id="btn-ko" class="active">한국어</button>
+      <button type="button" id="btn-en">EN</button>
+    </div>
+  </div>
+
+  <!-- ===== 히어로 ===== -->
+  <section class="card hero">
+    <div class="brand">
+      <img src="data:image/png;base64,__B64_logo__" alt="DATCO">
+    </div>
+
+    <h1 data-ko="AI 제조 플랫폼 닷코를&lt;br&gt;안내 드립니다."
+        data-en="Introducing DATCO,&lt;br&gt;the AI Manufacturing Platform."></h1>
+    <p class="hero-sub"
+       data-ko="흩어진 제조 데이터를 연결하는 AI 제조 공급망 플랫폼"
+       data-en="The AI manufacturing supply-chain platform that connects scattered manufacturing data"></p>
+    <div class="hero-rule"></div>
+
+    <p class="greeting"
+       data-ko="안녕하세요, &lt;strong&gt;닷코&lt;/strong&gt;입니다.&lt;br&gt;AI 제조 플랫폼 닷코에 관심을 가져주셔서 감사합니다."
+       data-en="Hello, this is &lt;strong&gt;DATCO&lt;/strong&gt;.&lt;br&gt;Thank you for your interest in DATCO, the AI manufacturing platform."></p>
+
+    <div class="feature-list">
+      <div class="feature">
+        <span class="feature-label" data-ko="하나의 플랫폼" data-en="One Platform"></span>
+        <p class="feature-text"
+           data-ko="견적·수주부터 생산, 납품, 정산까지 &lt;strong&gt;회사의 모든 업무와 데이터가 하나로 연결&lt;/strong&gt;됩니다. 부서마다 따로 관리하던 정보가 한곳에 모여, 같은 데이터를 두 번 입력하거나 찾아 헤매는 일이 사라집니다."
+           data-en="From quoting and orders to production, delivery, and settlement — &lt;strong&gt;all of your company's work and data are connected as one&lt;/strong&gt;. No more duplicate entry, no more hunting for information scattered across departments."></p>
+      </div>
+      <div class="feature">
+        <span class="feature-label" data-ko="AI 업무 자동화" data-en="AI Automation"></span>
+        <p class="feature-text"
+           data-ko="사람이 반복하던 문서 작업과 확인 업무를 AI가 대신 처리합니다. &lt;strong&gt;직원들은 더 가치 있는 일에 집중&lt;/strong&gt;하고, 업무 누락과 실수는 줄어듭니다."
+           data-en="AI takes over the repetitive paperwork and double-checking people used to do. &lt;strong&gt;Your team focuses on higher-value work&lt;/strong&gt;, with fewer omissions and errors."></p>
+      </div>
+      <div class="feature">
+        <span class="feature-label" data-ko="실시간 경영 가시성" data-en="Real-time Visibility"></span>
+        <p class="feature-text"
+           data-ko="공장이 지금 무엇을 만들고 있는지, 돈이 어디서 들어오고 나가는지 한 화면에서 실시간으로 보입니다. &lt;strong&gt;감이 아닌 데이터로, 더 빠르고 정확한 의사결정&lt;/strong&gt;이 가능해집니다."
+           data-en="See what your factory is producing right now and where money flows in and out — on one screen, in real time. &lt;strong&gt;Decisions driven by data, not gut feeling&lt;/strong&gt; — faster and more accurate."></p>
+      </div>
+    </div>
+
+    <div class="stat-band">
+      <span class="stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E14134" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+          <path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/>
+        </svg>
+      </span>
+      <p class="stat-text"
+         data-ko="닷코를 통해 &lt;strong&gt;제조 정확도&lt;/strong&gt;를 올린 회사"
+         data-en="Companies raising &lt;strong&gt;manufacturing accuracy&lt;/strong&gt; with DATCO"></p>
+      <div class="stat-number">+73</div>
+    </div>
+
+    <p class="hero-close"
+       data-ko="닷코는 단순한 디지털 전환(DX)을 넘어, 기업의 운영 방식 자체를 혁신하는 &lt;span class='accent'&gt;AX(AI Transformation)&lt;/span&gt; 파트너입니다. 더 자세한 내용은 아래 자료에서 확인해 주세요."
+       data-en="Beyond digital transformation (DX), DATCO is your partner for &lt;span class='accent'&gt;AX (AI Transformation)&lt;/span&gt; — innovating how your company operates. Explore the materials below to learn more."></p>
+  </section>
+
+  <!-- ===== 주요 기능 ===== -->
+  <div class="section-label" data-ko="주요 기능" data-en="Key Features"></div>
+  <section class="card modules">
+    <div class="icon-grid">
+      <div class="module"><img src="data:image/png;base64,__B64_scms__" alt="SCMS"><span class="module-name" data-ko="SCMS" data-en="SCMS"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_mes__" alt="MES"><span class="module-name" data-ko="MES" data-en="MES"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_acct__" alt="회계"><span class="module-name" data-ko="회계" data-en="Accounting"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_hr__" alt="인사"><span class="module-name" data-ko="인사" data-en="HR"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_logi__" alt="물류"><span class="module-name" data-ko="물류" data-en="Logistics"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_econtract__" alt="전자계약"><span class="module-name" data-ko="전자계약" data-en="e-Contract"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_eapproval__" alt="전자결재"><span class="module-name" data-ko="전자결재" data-en="e-Approval"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_security__" alt="건물 보안"><span class="module-name" data-ko="건물 보안" data-en="Bldg. Security"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_expense__" alt="경비청구"><span class="module-name" data-ko="경비청구" data-en="Expenses"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_calendar__" alt="일정관리"><span class="module-name" data-ko="일정관리" data-en="Calendar"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_mail__" alt="메일"><span class="module-name" data-ko="메일" data-en="Mail"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_messenger__" alt="메신저"><span class="module-name" data-ko="메신저" data-en="Messenger"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_drive__" alt="드라이브"><span class="module-name" data-ko="드라이브" data-en="Drive"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_finder__" alt="FINDER"><span class="module-name" data-ko="FINDER" data-en="FINDER"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_viewer3d__" alt="3D Viewer"><span class="module-name" data-ko="3D Viewer" data-en="3D Viewer"></span></div>
+      <div class="module"><img src="data:image/png;base64,__B64_crm__" alt="CRM"><span class="module-name" data-ko="CRM" data-en="CRM"></span></div>
+    </div>
+  </section>
+
+  <!-- ===== 문서 자료 ===== -->
+  <div class="section-label" data-ko="문서 자료" data-en="Documents"></div>
+  <div class="doc-grid">
+    <a class="card doc" href="https://drive.datco.kr/s/gieAqZwNSEY3cLo" target="_blank" rel="noopener">
+      <span class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E14134" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="8" y1="13" x2="16" y2="13"/>
+          <line x1="8" y1="17" x2="13" y2="17"/>
+        </svg>
+      </span>
+      <span class="doc-body">
+        <span class="doc-title" data-ko="회사소개서" data-en="Company Profile"></span>
+        <span class="doc-sub" data-ko="AI 제조 플랫폼 닷코 소개" data-en="About DATCO, the AI manufacturing platform"></span>
+      </span>
+      <span class="doc-arrow">&rsaquo;</span>
+    </a>
+
+    <a class="card doc" href="https://drive.datco.kr/s/AtjZNT5qeQiY4Dm" target="_blank" rel="noopener">
+      <span class="doc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#E14134" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <line x1="3" y1="9" x2="21" y2="9"/>
+          <line x1="9" y1="9" x2="9" y2="21"/>
+          <line x1="15" y1="9" x2="15" y2="21"/>
+        </svg>
+      </span>
+      <span class="doc-body">
+        <span class="doc-title" data-ko="서비스 비교표" data-en="Service Comparison"></span>
+        <span class="doc-sub" data-ko="서비스 분석 비교 자료" data-en="Service analysis &amp;amp; comparison"></span>
+      </span>
+      <span class="doc-arrow">&rsaquo;</span>
+    </a>
+  </div>
+
+  <!-- ===== 영상 자료 ===== -->
+  <div class="section-label" data-ko="영상 자료" data-en="Videos"></div>
+  <div class="video-grid">
+
+    <div class="card video-card">
+      <div class="frame" data-video-id="O-MlcocY20I">
+        <button class="thumb-btn" type="button" aria-label="DAT-V video">
+          <img src="https://img.youtube.com/vi/O-MlcocY20I/hqdefault.jpg" alt="DAT-V" loading="lazy">
+          <span class="play-badge">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </button>
+      </div>
+      <div class="video-meta">
+        <div class="video-title" data-ko="DAT-V 영상" data-en="DAT-V Video"></div>
+        <div class="video-sub" data-ko="DAT-V 제품 소개 영상" data-en="DAT-V product introduction"></div>
+      </div>
+    </div>
+
+    <div class="card video-card">
+      <div class="frame" data-video-id="BCE83yIwab4">
+        <button class="thumb-btn" type="button" aria-label="Brand film">
+          <img src="https://img.youtube.com/vi/BCE83yIwab4/hqdefault.jpg" alt="Brand film" loading="lazy">
+          <span class="play-badge">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+          </span>
+        </button>
+      </div>
+      <div class="video-meta">
+        <div class="video-title" data-ko="브랜드 필름" data-en="Brand Film"></div>
+        <div class="video-sub" data-ko="DATCO 브랜드 필름" data-en="DATCO brand film"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== 비즈니스 책임자 ===== -->
+  <div class="section-label" data-ko="비즈니스 책임자" data-en="Business Lead"></div>
+  <section class="card contact">
+    <div class="contact-head">
+      <div class="contact-name" data-ko="임현호 대표" data-en="Hyunho Lim, CEO"></div>
+      <div class="contact-role" data-ko="닷코 DATCO" data-en="DATCO"></div>
+    </div>
+    <div class="contact-actions">
+      <a class="btn btn-primary" href="tel:010-7630-5557">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        010-7630-5557
+      </a>
+      <a class="btn btn-ghost" href="sms:010-7630-5557">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span data-ko="문자 보내기" data-en="Send SMS"></span>
+      </a>
+      <a class="btn btn-ghost btn-email" href="mailto:LHO@datco.kr">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        LHO@datco.kr
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <strong data-ko="닷코 (DATCO)" data-en="DATCO"></strong>
+      <span class="divider">|</span><span data-ko="부산광역시 금정구 금강로 247" data-en="247, Geumgang-ro, Geumjeong-gu, Busan, Korea"></span>
+    </div>
+    <div>
+      <span data-ko="대표번호 1544-7621" data-en="Tel. +82-1544-7621"></span>
+      <span class="divider">|</span>support@datco.kr
+    </div>
+    <div>&copy; DATCO. All rights reserved.</div>
+  </footer>
+
+</div>
+
+<script>
+  // ===== 한/영 전환 =====
+  var btnKo = document.getElementById('btn-ko');
+  var btnEn = document.getElementById('btn-en');
+
+  function decode(s) {
+    var t = document.createElement('textarea');
+    t.innerHTML = s;
+    return t.value;
+  }
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-ko]').forEach(function (el) {
+      el.innerHTML = decode(el.getAttribute(lang === 'ko' ? 'data-ko' : 'data-en'));
+    });
+    btnKo.classList.toggle('active', lang === 'ko');
+    btnEn.classList.toggle('active', lang === 'en');
+  }
+  btnKo.addEventListener('click', function () { setLang('ko'); });
+  btnEn.addEventListener('click', function () { setLang('en'); });
+  setLang('ko');
+
+  // ===== 썸네일 클릭 시 YouTube 플레이어 로드 =====
+  document.querySelectorAll('.frame').forEach(function (frame) {
+    var btn = frame.querySelector('.thumb-btn');
+    btn.addEventListener('click', function () {
+      var id = frame.getAttribute('data-video-id');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+      iframe.title = 'YouTube video player';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      frame.replaceChild(iframe, btn);
+    });
+  });
+</script>
+</body>
+</html>
