@@ -1,15 +1,36 @@
 #!/usr/bin/env python3
-"""index.tpl.html + assets/*.b64 → _site/index.html, og.png 생성."""
+"""index.tpl.html + assets → _site/index.html, og.png 생성.
+
+assets/parts/<name>.pNN (청크 분할본)이 있으면 그것을 이어붙여 사용하고,
+없는 이름만 assets/<name>.b64 단일 파일을 사용한다.
+"""
 import glob
 import os
 import re
+from collections import defaultdict
 
 os.makedirs('_site', exist_ok=True)
 
-html = open('index.tpl.html').read()
+# 1) 청크 분할 자산 조립
+parts = defaultdict(list)
+for path in sorted(glob.glob('assets/parts/*.p[0-9][0-9]')):
+    base = os.path.basename(path)
+    name, pno = base.rsplit('.p', 1)
+    parts[name].append(path)
+
+blobs = {}
+for name, files in parts.items():
+    blobs[name] = ''.join(re.sub(r'\s+', '', open(f).read()) for f in sorted(files))
+
+# 2) 단일 .b64 파일 (청크가 없는 이름만)
 for path in glob.glob('assets/*.b64'):
     name = os.path.splitext(os.path.basename(path))[0]
-    b64 = re.sub(r'\s+', '', open(path).read())
+    if name not in blobs:
+        blobs[name] = re.sub(r'\s+', '', open(path).read())
+
+# 3) 템플릿 치환
+html = open('index.tpl.html').read()
+for name, b64 in blobs.items():
     placeholder = f'__B64_{name}__'
     assert placeholder in html, placeholder
     html = html.replace(placeholder, b64)
@@ -18,7 +39,7 @@ assert '__B64_' not in html, 'unresolved placeholder remains'
 open('_site/index.html', 'w').write(html)
 print('index.html built:', len(html))
 
-# og.png: 히어로 영역 1200x630 스크린샷
+# 4) og.png: 히어로 영역 1200x630 스크린샷
 from playwright.sync_api import sync_playwright
 
 with sync_playwright() as p:
