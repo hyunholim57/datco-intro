@@ -7,6 +7,7 @@ assets/parts/<name>.pNN (청크 분할본)이 있으면 그것을 이어붙여 �
 import glob
 import os
 import re
+import shutil
 from collections import defaultdict
 
 os.makedirs('_site', exist_ok=True)
@@ -39,7 +40,13 @@ assert '__B64_' not in html, 'unresolved placeholder remains'
 open('_site/index.html', 'w').write(html)
 print('index.html built:', len(html))
 
-# 4) og.png: 히어로 영역 1200x630 스크린샷
+# 4) 미디어 파일 복사 (있는 경우만)
+for f in ('twin.mp4', 'twin_poster.jpg'):
+    if os.path.exists(f):
+        shutil.copyfile(f, os.path.join('_site', f))
+        print('copied:', f)
+
+# 5) og.png: 히어로 영역 1200x630 스크린샷
 from playwright.sync_api import sync_playwright
 
 with sync_playwright() as p:
